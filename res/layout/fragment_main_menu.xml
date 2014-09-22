@@ -29,11 +29,10 @@
             android:layout_height="wrap_content"
             android:text="@string/new_diary_button"
             android:textColor="#FFFFFF"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
             android:background="@drawable/round_button"
             android:gravity="center_horizontal"
-            android:layout_marginTop="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="330dp"
             
              />
     </FrameLayout>

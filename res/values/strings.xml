@@ -11,4 +11,5 @@
     <string name="empty_list">No diary yet. create one?</string>
     <string name="new_diary_button">New diary</string>
     <string name="main_menu_title">Friend</string>
+    <string name="delete_diary">Delete</string>
 </resources>

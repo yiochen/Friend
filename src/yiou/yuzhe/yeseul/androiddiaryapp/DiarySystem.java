@@ -54,4 +54,9 @@ public class DiarySystem {
 			return false;
 		}
 	}
+
+	public void deleteDiary(Diary item) {
+		mDiaries.remove(item);
+		
+	}
 }

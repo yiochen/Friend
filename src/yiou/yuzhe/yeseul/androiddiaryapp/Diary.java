@@ -12,7 +12,7 @@ import android.graphics.BitmapFactory;
 
 public class Diary {
 	private UUID mId;
-	private String mTitle;
+	private String mTitle="";
 	private Date mDate;
 	private String mContent;
 	private int mSelfie;
