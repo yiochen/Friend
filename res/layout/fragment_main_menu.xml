@@ -7,18 +7,17 @@
     <!-- and have the empty one be android:id="@android:id/empty" -->
     <!-- the list one be android:id="@android:id/list" -->
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@android:id/empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/design2"
-       >
+        android:background="@drawable/design2" >
 
         <TextView
             android:id="@+id/empty_list_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerInParent="true"
             android:text="@string/empty_list"
             android:textColor="#CCCCCC"
             android:textSize="30sp" />
@@ -27,15 +26,14 @@
             android:id="@+id/new_diary_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/new_diary_button"
-            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+           android:layout_below="@id/empty_list_text_view"
             android:background="@drawable/round_button"
-            android:gravity="center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="330dp"
-            
-             />
-    </FrameLayout>
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/new_diary_button"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
 
     <ListView
         android:id="@android:id/list"
