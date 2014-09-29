@@ -190,45 +190,44 @@ public class MainMenuActivity extends Activity {
 			}
 			return super.onContextItemSelected(item);
 		};
-	}
+		private  class DiaryAdapter extends ArrayAdapter<Diary> {
 
-	public static class DiaryAdapter extends ArrayAdapter<Diary> {
+			private Activity activity;
 
-		private Activity activity;
+			public DiaryAdapter(Activity activity, ArrayList<Diary> diaries) {
 
-		public DiaryAdapter(Activity activity, ArrayList<Diary> diaries) {
+				super(activity, 0, 
+						diaries);
 
-			super(activity, R.layout.list_item_diary, R.id.diary_list_code,
-					diaries);
-
-			this.activity = activity;
-
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			if (convertView == null) {
-				convertView = this.activity.getLayoutInflater().inflate(
-						R.layout.list_item_diary, null);
+				this.activity = getActivity();
 
 			}
-			Diary d = getItem(position);
-			ImageView selfie = (ImageView) convertView
-					.findViewById(R.id.diary_selfie);
-			selfie.setImageBitmap(d.getSelfie(this.activity));
-			TextView title = (TextView) convertView
-					.findViewById(R.id.diary_title);
-			title.setText(d.getTitle());
-			Log.i("MainMenuActivity", d.getTitle());
-			TextView content = (TextView) convertView
-					.findViewById(R.id.diary_content);
-			content.setText(d.getContent());
-			TextView listItemCode = (TextView) convertView
-					.findViewById(R.id.diary_list_code);
-			listItemCode.setVisibility(View.INVISIBLE);
 
-			return super.getView(position, convertView, parent);
+			@Override
+			public View getView(int position, View convertView, ViewGroup parent) {
+				if (convertView == null) {
+					convertView = getActivity().getLayoutInflater().inflate(
+							R.layout.list_item_diary, null);
+
+				}
+				Diary d = getItem(position);
+				ImageView selfie = (ImageView) convertView
+						.findViewById(R.id.diary_selfie);
+				selfie.setImageBitmap(d.getSelfie(this.activity));
+				TextView title = (TextView) convertView
+						.findViewById(R.id.diary_title);
+				title.setText(d.getTitle());
+				Log.i("MainMenuActivity", d.getTitle());
+				TextView content = (TextView) convertView
+						.findViewById(R.id.diary_content);
+				content.setText(d.getContent());
+				
+
+				return convertView;
+			}
+
 		}
-
 	}
+
+	
 }
