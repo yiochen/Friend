@@ -17,7 +17,7 @@ public class NewDiaryActivity extends Activity {
 	static final int PICK_SELFIE_REQUEST = 1;
 	Date date = new Date();
 	private Diary mDiary;
-	private ImageView selfiePreview;
+	private ImageView b;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class NewDiaryActivity extends Activity {
 		String today = "" + (date.getMonth() + 1) + "/" + date.getDate() + "/"
 				+ (date.getYear() + 1900);
 		d.setText(today);
-		Button b = (Button) findViewById(R.id.choose_selfie);
+		b = (ImageView) findViewById(R.id.choose_selfie);
 		
 		
 		b.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +107,7 @@ public class NewDiaryActivity extends Activity {
 			if (data.getIntExtra(ChooseSelfie.PICK_SELFIE, 0)==0) return;
 			int selfie=data.getIntExtra(ChooseSelfie.PICK_SELFIE, 0);
 			mDiary.setSelfie(selfie);
+			b.setImageResource(mDiary.getSelfie());
 			
 			
 		}

@@ -2,24 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
     android:orientation="vertical" >
 
    
 
-    <Button
+    <ImageView
         android:id="@+id/choose_selfie"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:src="@drawable/default_profile_gray"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerInside"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="+" />
+       
+         />
 
     <EditText
         android:id="@+id/new_diary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/new_diary_title"
         android:layout_marginTop="26dp"
@@ -30,9 +33,9 @@
         android:id="@+id/new_diary_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/choose_selfie"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
+        android:layout_alignBottom="@+id/choose_selfie"
+        android:layout_alignLeft="@+id/date"
+        android:layout_alignParentRight="true"
         android:ems="10"
         android:hint="Title"
         android:textSize="@dimen/title_font_size" />
@@ -42,7 +45,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/new_diary_title"
-        android:layout_alignRight="@+id/new_diary_title"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toRightOf="@+id/choose_selfie"
         android:ems="10"
         android:hint="Input Date"
         android:inputType="date" >
