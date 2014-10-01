@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@drawable/background_activated" >
+    
+    >
 
     <ImageView
         android:id="@+id/diary_selfie"
